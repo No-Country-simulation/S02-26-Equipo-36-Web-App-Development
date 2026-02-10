@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Tus variables base */
+:root {
+  --background-light: #f6f8f6;
+  --background-dark: #122111;
+  --primary: #2be619;
+  --light: #121811;
+  --dark: #f1f4f0;
+  --font-manrope: var(--font-manrope-variable);
+}
+
+/* Tailwind v4 usa @theme */
+@theme inline {
+  --color-background-light: var(--background-light);
+  --color-background-dark: var(--background-dark);
+  --color-primary: var(--primary);
+  --font-display: var(--font-manrope);
+  --radius-base: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+.text-color-light {
+  color: var(--light);
+}
+
+.text-color-dark {
+  color: var(--dark);
+}
+
+/* Iconos */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
