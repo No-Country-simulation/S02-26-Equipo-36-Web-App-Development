@@ -1,3 +1,35 @@
 spring:
   application:
     name: equifit-app
+  # Configuración de Base de Datos (PostgreSQL)
+  datasource:
+    url: jdbc:postgresql://localhost:5432/equifit_db
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:admin}
+    driver-class-name: org.postgresql.Driver
+
+  # Configuración de JPA / Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false # Cambiar a true para ver las queries en consola
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # ACTIVACIÓN DE JAVA 21 VIRTUAL THREADS
+  threads:
+    virtual:
+      enabled: true
+
+# Configuración del Servidor
+server:
+  port: 8080
+  error:
+    include-message: always # Útil para debuggear errores de la API
+
+# Configuración de Jackson (Manejo de JSON)
+spring.jackson:
+  date-format: yyyy-MM-dd HH:mm:ss
+  time-zone: UTC
